@@ -18,6 +18,18 @@
             border-radius: 8px;
             display: inline-block;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            max-width: 350px;
+            width: 100%;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #2a2a2a;
+            color: white;
+            font-size: 16px;
         }
         button {
             background-color: #007aff;
@@ -27,17 +39,27 @@
             font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
         }
         button:hover {
             opacity: 0.9;
+        }
+        .error {
+            color: #ff3b30;
+            font-size: 14px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h2>Among Us Voice Chat - Web Client</h2>
+        <h2>Join Among Us Voice Chat</h2>
+        <input type="text" id="username" placeholder="In-Game Name" required>
+        <input type="text" id="roomCode" placeholder="Room Code" required>
+        <button id="joinBtn">Connect to Room</button>
+        <p id="errorMsg" class="error"></p>
         <p>Status: <span id="status" style="color: #ff3b30;">Disconnected</span></p>
-        <button id="joinBtn">Connect to iOS Host Room</button>
     </div>
 
     <!-- Socket.io client library via CDN -->
